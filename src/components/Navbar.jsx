@@ -78,7 +78,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
                   to="/wishlist"
                   className="text-center text-dark text-decoration-none"
                 >
-                  <FaHeart size={20} />
+                  <FaHeart size={25} />
                   <div style={{ fontSize: "0.8rem" }}>Favorilerim</div>
                 </Link>
 
@@ -89,7 +89,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
                     style={{ cursor: "pointer" }}
                     onClick={() => setShowLoginMenu(!showLoginMenu)}
                   >
-                    <FaUser size={20} />
+                    <FaUser size={25} />
                     <div style={{ fontSize: "0.8rem" }}>Hesabım</div>
                   </div>
 
@@ -116,7 +116,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
                   style={{ cursor: "pointer" }}
                   onClick={() => setShowLoginMenu(!showLoginMenu)}
                 >
-                  <FaUser size={20} />
+                  <FaUser size={25} />
                   <div style={{ fontSize: "0.8rem" }}>Giriş Yap</div>
                 </div>
 
@@ -144,7 +144,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
 
             {/* Sepet */}
             <Link to="/cart" className="d-flex flex-column align-items-center text-dark text-decoration-none">
-              <FaShoppingCart size={20} />
+              <FaShoppingCart size={25} />
               <div style={{ fontSize: "0.8rem" }}>Sepetim</div>
             </Link>
           </div>
