@@ -1,0 +1,19 @@
+.product-detail {
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.product-detail img {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.similar-products-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.similar-products-list li {
+  margin-bottom: 0.5rem;
+}
