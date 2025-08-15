@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGoogle, FaApple, FaFacebookF, FaArrowLeft } from "react-icons/fa";
 import "./Login.css";
+import { useLocation } from "react-router-dom";
 
 export default function Login({ setIsLoggedIn, setLoggedInUser }) {
   const [activeTab, setActiveTab] = useState("login");
@@ -10,6 +11,18 @@ export default function Login({ setIsLoggedIn, setLoggedInUser }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.activeTab) {
+      setActiveTab(location.state.activeTab);
+      if (location.state.activeTab === "login") {
+        setStep(1);
+        setUsername("");
+        setPassword("");
+      }
+    }
+  }, [location.state]);
 
   const handleNext = (e) => {
     e.preventDefault();
@@ -142,13 +155,15 @@ export default function Login({ setIsLoggedIn, setLoggedInUser }) {
                 </form>
               )}
 
+              {error && <p className="text-danger ms-3">{error}</p>}
+
               {/* Sosyal giriş butonları */}
               <div style={{ padding: "0 15px" }} className="d-flex gap-2 mb-2">
                 <button
                   className="btn btn-light border flex-fill d-flex align-items-center justify-content-center"
                   style={{ height: "45px" }}
                 >
-                  <FaGoogle className="me-2 text-danger" style={{ color: "#DB4437", fontSize: "1.5rem" }} />
+                  <FaGoogle className="me-2" style={{ color: "#DB4437", fontSize: "1.5rem" }} />
                   Google ile Giriş Yap
                 </button>
                 <button
@@ -187,8 +202,6 @@ export default function Login({ setIsLoggedIn, setLoggedInUser }) {
                 </a>{" "}
                 uygulanacaktır.
               </p>
-
-              {error && <p className="text-danger">{error}</p>}
             </>
           )}
 

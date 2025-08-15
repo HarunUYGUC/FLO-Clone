@@ -64,7 +64,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
             </div>
 
             <div className="d-flex align-items-center form-control border-warning p-2" style={{ width: '650px', height: '50px' }}>
-              <FaSearch style={{ color: '#575A5D' }} />
+              <FaSearch size={20} style={{ color: '#989A98' }} />
               <input type="text" className="form-control border-0 search-input" placeholder="Ürün veya marka ara..." style={{ height: '28px' }} />
             </div>
           </div>
@@ -126,13 +126,15 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
                 >
                   <Link
                     to="/login"
+                    state={{ activeTab: "login" }}
                     className="btn w-100 mb-2"
                     style={{ backgroundColor: "#ff6600", color: "#fff" }}
                   >
                     Giriş Yap
                   </Link>
                   <Link
-                    to="/register"
+                    to="/login"
+                    state={{ activeTab: "register" }}
                     className="btn w-100"
                     style={{ backgroundColor: "#eaeaea", color: "#555" }}
                   >
