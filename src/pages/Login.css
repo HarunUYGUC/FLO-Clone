@@ -53,3 +53,65 @@
   margin-top: 0.5rem;
   text-align: center;
 }
+
+.tab-btn {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin: 2px;
+  font-weight: bold;
+  color: black;
+  transition: 0.2s;
+}
+
+.tab-btn.active {
+  background-color: #ffffff;
+  color: #ff6600;
+  border-radius: 10px;
+}
+
+/* Input alanları */
+input.form-control {
+  color: #AAAAAA;
+  border-color: #CCCCCC;
+  box-shadow: none;
+}
+
+input.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #CCCCCC;
+}
+
+/* Sosyal giriş butonları */
+.btn-light {
+  color: #393939;
+  font-size: 0.84rem;
+  border-color: #CCCCCC;
+  border-radius: 10px;
+}
+
+.btn-light:hover {
+  background-color: #EBEBEB;
+}
+
+/* Placeholder ve input yazı rengi */
+.form-control {
+  color: #AAAAAA;
+  border-color: #CCCCCC;
+}
+
+.form-control::placeholder {
+  color: #AAAAAA;
+  opacity: 1;
+}
+
+.form-floating > label {
+  color: #AAAAAA;
+}
+
+.form-floating .form-control:focus {
+  color: #AAAAAA;
+  border-color: #CCCCCC;
+  box-shadow: none;
+}
