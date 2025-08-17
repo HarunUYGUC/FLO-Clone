@@ -115,3 +115,16 @@ input.form-control:focus {
   border-color: #CCCCCC;
   box-shadow: none;
 }
+
+/* Checkbox genel görünüm */
+.form-check-input {
+  cursor: pointer;
+  accent-color: #FF6600; /* modern tarayıcılar için turuncu tik */
+  box-shadow: none !important;
+}
+
+/* Eski tarayıcılar için fallback */
+.form-check-input:checked {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important;
+}
