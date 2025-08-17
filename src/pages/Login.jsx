@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import SocialLogin from "../components/SocialLogin";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa";
 import "./Login.css";
 
 export default function Login({ setIsLoggedIn, setLoggedInUser }) {
