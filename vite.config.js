@@ -4,4 +4,13 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      "/auth": {
+        target: "https://flo-clone-6gwad.ondigitalocean.app",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })
