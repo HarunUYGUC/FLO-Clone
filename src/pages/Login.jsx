@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import SocialLogin from "../components/SocialLogin";
-import { FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { loginUser, registerUser } from "../api/auth";
+import PasswordToggleIcon from "../components/PasswordToggleIcon";
 import "./Login.css";
 
 export default function Login({ setIsLoggedIn, setLoggedInUser }) {
@@ -163,9 +164,9 @@ export default function Login({ setIsLoggedIn, setLoggedInUser }) {
 
               {step === 2 && (
                 <form style={{ padding: "15px" }} onSubmit={handleLogin}>
-                  <div className="form-floating mb-3">
+                  <div className="form-floating mb-3" style={{ position: "relative" }}>
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       className="form-control"
                       id="password"
                       placeholder="Şifre"
@@ -174,7 +175,10 @@ export default function Login({ setIsLoggedIn, setLoggedInUser }) {
                       required
                     />
                     <label htmlFor="password">Şifre</label>
+
+                    <PasswordToggleIcon show={showPassword} onToggle={() => setShowPassword(!showPassword)} />
                   </div>
+
                   <button
                     type="submit"
                     className="btn w-100 mb-3"
@@ -269,21 +273,7 @@ export default function Login({ setIsLoggedIn, setLoggedInUser }) {
                 />
                 <label htmlFor="registerPassword">Şifre</label>
 
-                {/* Göz ikonu */}
-                <span
-                  onClick={() => setShowPassword(!showPassword)}
-                  style={{
-                    position: "absolute",
-                    right: "15px",
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    cursor: "pointer",
-                    color: "#666",
-                    zIndex: 10,
-                  }}
-                >
-                  {showPassword ? <FaEye /> : <FaEyeSlash />}
-                </span>
+                <PasswordToggleIcon show={showPassword} onToggle={() => setShowPassword(!showPassword)} />
 
                 <div
                   className="form-text"
