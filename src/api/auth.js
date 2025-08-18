@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const API_BASE = "/auth";
+const API_BASE = "/auth"; // Hem Development hem Production için
 
-// Kullanıcı kaydı
 export const registerUser = async (userData) => {
   try {
     const response = await axios.post(`${API_BASE}/register`, userData, {
@@ -14,7 +13,6 @@ export const registerUser = async (userData) => {
   }
 };
 
-// Kullanıcı girişi
 export const loginUser = async (credentials) => {
   try {
     const response = await axios.post(`${API_BASE}/login`, credentials, {

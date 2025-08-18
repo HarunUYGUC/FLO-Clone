@@ -1,0 +1,2 @@
+/auth/*  https://flo-clone-6gwad.ondigitalocean.app/auth/:splat  200
+/*       /index.html   200
