@@ -80,10 +80,10 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
         <div className="container d-flex justify-content-between">
           <DownloadNow url="https://www.flo.com.tr/mobil-uygulamalar" />
           <div className="top-links">
-            <Link to="/coupons" className="me-3 text-dark text-decoration-none">Kuponlarım</Link>
+            <Link to="/login" className="me-3 text-dark text-decoration-none">Kuponlarım</Link>
             <Link to="/order-tracking" className="me-3 text-dark text-decoration-none">Sipariş Takibi</Link>
-            <Link to="/easy-return" className="me-3 text-dark text-decoration-none">Kolay İade</Link>
-            <Link to="/customer-service" className="text-dark text-decoration-none">Müşteri Hizmetleri</Link>
+            <Link to="/login" className="me-3 text-dark text-decoration-none">Kolay İade</Link>
+            <Link to="/login" className="text-dark text-decoration-none">Müşteri Hizmetleri</Link>
           </div>
         </div>
       </div>

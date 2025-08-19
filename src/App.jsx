@@ -21,6 +21,7 @@ import BagsAccessories from "./pages/BagsAccessories";
 import Brands from "./pages/Brands";
 import Discounts from "./pages/Discounts";
 import AllCategories from "./pages/AllCategories";
+import OrderTracking from "./pages/OrderTracking";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="/markalar" element={<Brands />} />
           <Route path="/indirim" element={<Discounts />} />
           <Route path="/tum-kategoriler" element={<AllCategories />} />
+          <Route path="/order-tracking" element={<OrderTracking />} />
           <Route
             path="/wishlist"
             element={
