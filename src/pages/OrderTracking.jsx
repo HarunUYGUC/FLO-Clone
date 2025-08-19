@@ -18,7 +18,7 @@ const OrderTracking = () => {
           </div>
         </div>
 
-        {/* Ana Form Kartı - Üstten boşluk eklenmiş hali */}
+        {/* Ana Form Kartı */}
         <div className="card border-0 shadow-sm rounded-0 rounded-bottom mt-4"> 
           <div className="card-body p-4">
             <p className="text-dark mb-4">
@@ -64,10 +64,10 @@ const OrderTracking = () => {
 
             {/* Buton Satırı */}
             <div className="row">
-              <div className="col">
+              <div className="col-lg-7">
                 <button
                   type="button"
-                  className="btn w-100 text-white fw-bold py-3"
+                  className="btn w-100 text-white py-2"
                   style={{ backgroundColor: '#FF6600', borderRadius: '10px' }}
                   onClick={handleSendCode}
                 >
