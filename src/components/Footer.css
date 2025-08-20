@@ -1,0 +1,67 @@
+/* Genel yazı rengi */
+.footer-custom .text-custom,
+.footer-custom p,
+.footer-custom li,
+.footer-custom a {
+  color: #6f6f6f !important;
+  text-decoration: none !important;
+}
+
+/* Divider çizgileri */
+.custom-divider {
+  border: none;
+  border-top: 3px solid #DBDBDB;
+  margin: 0.5rem 0 1rem 0;
+}
+
+/* Başlık renkleri */
+.footer-custom h5 {
+  color: #000000;
+}
+
+/* Link item alt çizgi */
+.link-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.follow-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Takip ikonları */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #6f6f6f;
+  border-radius: 50%;
+  color: white;
+  background-color: #6f6f6f;
+  font-size: 18px;
+}
+
+/* Sağ kutular alt çizgi */
+.custom-box {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+/* Taksit ve Telif */
+.footer-bottom {
+  border-top: 1px solid #DBDBDB;
+  padding-top: 20px;
+  color: #6f6f6f;
+  font-size: 14px;
+}
+
+.footer-bottom img {
+  max-height: 30px;
+}
+
+.footer-custom .footer-bottom p {
+  color: #000000 !important;
+}

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
@@ -26,6 +27,7 @@ import OrderTracking from "./pages/OrderTracking";
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -42,6 +44,7 @@ export default function App() {
         loggedInUser={loggedInUser}
         setLoggedInUser={setLoggedInUser}
       />
+
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -59,6 +62,8 @@ export default function App() {
           <Route path="/indirim" element={<Discounts />} />
           <Route path="/tum-kategoriler" element={<AllCategories />} />
           <Route path="/order-tracking" element={<OrderTracking />} />
+          <Route path="*" element={<Navigate to="/" />} />
+
           <Route
             path="/wishlist"
             element={
@@ -68,9 +73,11 @@ export default function App() {
             }
           />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setLoggedInUser={setLoggedInUser} />} />
-          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
+      
+      {/* Eğer Basket sayfasında değilse Footer göster */}
+      {location.pathname !== "/basket" && <Footer />}
     </div>
   );
 }
