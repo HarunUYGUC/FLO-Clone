@@ -26,7 +26,11 @@ export default function Footer() {
                 <ul className="list-unstyled">
                   {["Kampanyalar", "Mağazalarımız", "Sipariş Takibi", "İşlem Rehberi", "Kişisel Verilerin Korunması", "Kurumsal", "İnsan Kaynakları", "İletişim", "Kullanım Koşulları"].map(item => (
                     <li key={item} className="link-item">
-                      <Link to="#">{item}</Link>
+                      {item === "Sipariş Takibi" ? (
+                        <Link to="/order-tracking">{item}</Link>
+                      ) : (
+                        <Link to="/">{item}</Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -86,7 +90,7 @@ export default function Footer() {
             </div>
             <div className="mb-4 d-flex gap-3 custom-box">
               <FaPhoneAlt size={30} />
-              <p><strong>Çağrı Merkezi</strong><br/>Müşteri hizmetlerimiz çağrılarınıza haftanın 7 günü 08.00 - 30.00 saatleri arasında hizmet vermektedir.</p>
+              <p><strong>Çağrı Merkezi</strong><br/>Müşteri hizmetlerimiz çağrılarınıza haftanın 7 günü 08.00 - 22.00 saatleri arasında hizmet vermektedir.</p>
             </div>
             <div className="mb-4 d-flex gap-3 custom-box">
               <FaCreditCard size={30} />
