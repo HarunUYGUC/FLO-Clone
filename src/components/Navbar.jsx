@@ -197,13 +197,13 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
       {/* Alt Menü */}
       <div className="py-3" style={{ backgroundColor: '#F8F8F8' }}>
         <div className="container d-flex justify-content-between fw-semibold navbar-submenu">
-          <NavLink to="/ayakkabi" className="text-dark text-decoration-none">Ayakkabı</NavLink>
-          <NavLink to="/spor" className="text-dark text-decoration-none">Spor</NavLink>
-          <NavLink to="/giyim" className="text-dark text-decoration-none">Giyim</NavLink>
-          <NavLink to="/canta-aksesuar" className="text-dark text-decoration-none">Çanta ve Aksesuar</NavLink>
-          <NavLink to="/markalar" className="text-dark text-decoration-none">Markalar</NavLink>
-          <NavLink to="/indirim" className="text-dark text-decoration-none">İndirim</NavLink>
-          <NavLink to="/tum-kategoriler" className="text-dark text-decoration-none">Tüm Kategoriler</NavLink>
+          <NavLink to="/products/electronics" className="text-dark text-decoration-none">Ayakkabı</NavLink>
+          <NavLink to="/products/jewelery" className="text-dark text-decoration-none">Spor</NavLink>
+          <NavLink to="/products/men's clothing" className="text-dark text-decoration-none">Giyim</NavLink>
+          <NavLink to="/products/women's clothing" className="text-dark text-decoration-none">Çanta ve Aksesuar</NavLink>
+          <NavLink to="/products" className="text-dark text-decoration-none">Markalar</NavLink>
+          <NavLink to="/products" className="text-dark text-decoration-none">İndirim</NavLink>
+          <NavLink to="/products" className="text-dark text-decoration-none">Tüm Kategoriler</NavLink>
         </div>
       </div>
 

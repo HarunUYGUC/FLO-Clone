@@ -1,22 +1,79 @@
-.product-list ul {
-  list-style: none;
-  padding: 0;
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s;
+  height: 100%;
 }
 
-.product-list li {
-  margin-bottom: 1rem;
-  background: white;
-  padding: 1rem;
-  border-radius: 5px;
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
-.product-list a {
-  color: inherit;
-  text-decoration: none;
+.card-header {
+  height: 40px;
 }
 
-.product-list span {
+.fav-badge {
+  font-size: 0.8rem;
   font-weight: bold;
-  display: block;
-  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-btn .text-danger {
+  font-size: 1.2rem;
+}
+
+.card-image-container {
+  height: 250px;
+  position: relative;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.color-variants {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 5px;
+}
+
+.color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.star-rating {
+  font-size: 1.2rem;
+}
+
+.rating-count {
+  font-size: 0.8rem;
+}
+
+.price-info .text-success {
+  font-size: 0.8rem;
+}
+
+.coupon-tag {
+  background-color: #f7f7f7 !important;
+  color: #555 !important;
+  font-size: 0.7rem;
+  border-radius: 4px;
 }

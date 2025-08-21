@@ -49,18 +49,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductList />} />
-          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/products/:category" element={<ProductList />} />
+          <Route path="/products/detail/:id" element={<ProductDetail />} />
           <Route path="/kadin" element={<Woman />} />
           <Route path="/erkek" element={<Man />} />
           <Route path="/cocuk" element={<Child />} />
           <Route path="/basket" element={<Basket />} />
-          <Route path="/ayakkabi" element={<Shoes />} />
-          <Route path="/spor" element={<Sports />} />
-          <Route path="/giyim" element={<Clothing />} />
-          <Route path="/canta-aksesuar" element={<BagsAccessories />} />
-          <Route path="/markalar" element={<Brands />} />
-          <Route path="/indirim" element={<Discounts />} />
-          <Route path="/tum-kategoriler" element={<AllCategories />} />
           <Route path="/order-tracking" element={<OrderTracking />} />
           <Route path="*" element={<Navigate to="/" />} />
 
