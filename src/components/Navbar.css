@@ -168,3 +168,12 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+
+.mobile-menu-item {
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-item:hover, .mobile-menu-item:active {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}

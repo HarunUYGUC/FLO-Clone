@@ -90,7 +90,7 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
             <li className="list-group-item">
               <Link to="/products/electronics" className="d-flex align-items-center justify-content-between text-dark text-decoration-none mobile-menu-item">
                 <div className="d-flex align-items-center">
-                  <img src="ayakkabi.jpg" alt="Ayakkabı" className="me-3" />
+                  <img src="/ayakkabi.jpg" alt="Ayakkabı" className="me-3" />
                   <span>Ayakkabı</span>
                 </div>
                 <FaChevronRight size={14} className="text-muted" />
@@ -99,7 +99,7 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
             <li className="list-group-item">
               <Link to="/products/jewelery" className="d-flex align-items-center justify-content-between text-dark text-decoration-none mobile-menu-item">
                 <div className="d-flex align-items-center">
-                  <img src="spor.jpg" alt="Spor" className="me-3" />
+                  <img src="/spor.jpg" alt="Spor" className="me-3" />
                   <span>Spor</span>
                 </div>
                 <FaChevronRight size={14} className="text-muted" />
@@ -108,7 +108,7 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
             <li className="list-group-item">
               <Link to="/products/men's clothing" className="d-flex align-items-center justify-content-between text-dark text-decoration-none mobile-menu-item">
                 <div className="d-flex align-items-center">
-                  <img src="giyim.jpg" alt="Giyim" className="me-3" />
+                  <img src="/giyim.jpg" alt="Giyim" className="me-3" />
                   <span>Giyim</span>
                 </div>
                 <FaChevronRight size={14} className="text-muted" />
@@ -126,7 +126,7 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
             <li className="list-group-item">
               <Link to="/space" className="d-flex align-items-center justify-content-between text-dark text-decoration-none mobile-menu-item">
                 <div className="d-flex align-items-center">
-                  <img src="markalar.jpg" alt="Markalar" className="me-3" />
+                  <img src="/markalar.jpg" alt="Markalar" className="me-3" />
                   <span>Markalar</span>
                 </div>
                 <FaChevronRight size={14} className="text-muted" />
@@ -135,7 +135,7 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
             <li className="list-group-item">
               <Link to="/space" className="d-flex align-items-center justify-content-between text-dark text-decoration-none mobile-menu-item">
                 <div className="d-flex align-items-center">
-                  <img src="indirim.jpg" alt="İndirim" className="me-3" />
+                  <img src="/indirim.jpg" alt="İndirim" className="me-3" />
                   <span>İndirim</span>
                 </div>
                 <FaChevronRight size={14} className="text-muted" />
@@ -144,7 +144,7 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
             <li className="list-group-item">
               <Link to="/products" className="d-flex align-items-center justify-content-between text-dark text-decoration-none mobile-menu-item">
                 <div className="d-flex align-items-center">
-                  <img src="tum-kategoriler.jpg" alt="Tüm Kategoriler" className="me-3" />
+                  <img src="/tum-kategoriler.jpg" alt="Tüm Kategoriler" className="me-3" />
                   <span>Tüm Kategoriler</span>
                 </div>
                 <FaChevronRight size={14} className="text-muted" />
