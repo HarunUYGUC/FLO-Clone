@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { FaHeart, FaShoppingCart, FaStar, FaRegStar } from 'react-icons/fa';
 import "./ProductList.css";
 
 export default function ProductList() {
   const { category } = useParams();
+  const location = useLocation();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -73,13 +74,17 @@ export default function ProductList() {
                     <FaHeart className="text-danger" />
                   </button>
                   <button className="btn btn-light rounded-circle icon-btn d-flex justify-content-center align-items-center">
-                    <FaShoppingCart className="text-danger" />
+                    <FaShoppingCart className="text-success" />
                   </button>
                 </div>
               </div>
 
               {/* Ürün Resmi ve Sol Altındaki İki Nokta */}
-              <Link to={`/products/detail/${p.id}`} className="text-decoration-none text-dark d-flex flex-column">
+              <Link 
+                to={`/products/detail/${p.id}`}
+                state={{ from: location.pathname }} 
+                className="text-decoration-none text-dark d-flex flex-column"
+              >
                 <div className="card-image-container d-flex justify-content-center align-items-center p-3">
                   <img src={p.image} className="card-img-top product-image" alt={p.title} />
                   <div className="color-variants">

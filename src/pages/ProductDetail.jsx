@@ -1,11 +1,13 @@
 import "./ProductDetail.css";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+  const from = location.state?.from || "/products";
 
   useEffect(() => {
     async function fetchProduct() {
@@ -35,7 +37,7 @@ export default function ProductDetail() {
     <div className="container my-5">
       <div className="row">
         <div className="col-12 mb-4">
-          <Link to="/products" className="btn btn-outline-secondary">
+          <Link to={from} className="btn btn-outline-secondary">
             ← Ürün listesine dön
           </Link>
         </div>
@@ -51,7 +53,10 @@ export default function ProductDetail() {
           <p>
             <strong>Puan:</strong> {product.rating.rate} ({product.rating.count} oy)
           </p>
-          <button className="btn btn-lg btn-danger mt-3 w-100">Sepete Ekle</button>
+          <div className="d-flex gap-3">
+            <button className="btn btn-lg btn-success mt-3 w-100">Sepete Ekle</button>
+            <button className="btn btn-lg btn-danger mt-3 w-100">Favorilere Ekle</button>
+          </div>
         </div>
       </div>
     </div>
