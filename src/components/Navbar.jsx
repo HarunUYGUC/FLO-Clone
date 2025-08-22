@@ -201,8 +201,8 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
           <NavLink to="/products/jewelery" className="text-dark text-decoration-none">Spor</NavLink>
           <NavLink to="/products/men's clothing" className="text-dark text-decoration-none">Giyim</NavLink>
           <NavLink to="/products/women's clothing" className="text-dark text-decoration-none">Çanta ve Aksesuar</NavLink>
-          <NavLink to="/products" className="text-dark text-decoration-none">Markalar</NavLink>
-          <NavLink to="/products" className="text-dark text-decoration-none">İndirim</NavLink>
+          <NavLink to="/" className="text-dark text-decoration-none">Markalar</NavLink>
+          <NavLink to="/" className="text-dark text-decoration-none">İndirim</NavLink>
           <NavLink to="/products" className="text-dark text-decoration-none">Tüm Kategoriler</NavLink>
         </div>
       </div>

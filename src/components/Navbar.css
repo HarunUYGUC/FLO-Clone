@@ -35,10 +35,6 @@
   position: relative;
 }
 
-.navbar-submenu a:hover {
-  color: #FF671D !important;
-}
-
 .navbar-submenu a::after {
   content: "";
   position: absolute;
@@ -49,7 +45,21 @@
   background-color: transparent;
 }
 
+.navbar-submenu a:hover {
+  color: #FF671D !important;
+}
+
 .navbar-submenu a:hover::after {
+  background-color: #FF671D;
+}
+
+.navbar-submenu a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  width: 100%;
+  height: 2px;
   background-color: #FF671D;
 }
 
@@ -62,7 +72,8 @@
   padding-bottom: 4px;
 }
 
-.navbar-menu a.active {
+.navbar-menu a.active,
+.navbar-submenu a.active {
   color: #FF671D !important;
 }
 
