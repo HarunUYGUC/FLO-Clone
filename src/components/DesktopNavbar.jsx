@@ -124,7 +124,7 @@ export default function DesktopNavbar({
       {/* Alt Menü */}
       <div className="py-3 d-none d-lg-block" style={{ backgroundColor: '#F8F8F8' }}>
         <div className="container d-flex justify-content-between fw-semibold navbar-submenu">
-          <NavLink to="/" className="text-dark text-decoration-none">Ana Sayfa</NavLink>
+          <NavLink to="/" className="text-dark text-decoration-none">Okula Dönüş</NavLink>
           <NavLink to="/products/electronics" className="text-dark text-decoration-none">Ayakkabı</NavLink>
           <NavLink to="/products/jewelery" className="text-dark text-decoration-none">Spor</NavLink>
           <NavLink to="/products/men's clothing" className="text-dark text-decoration-none">Giyim</NavLink>
