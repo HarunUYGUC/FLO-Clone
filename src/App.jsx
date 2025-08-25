@@ -15,13 +15,6 @@ import Basket from "./pages/Basket";
 import Woman from "./pages/Woman";
 import Man from "./pages/Man";
 import Child from "./pages/Child";
-import Shoes from "./pages/Shoes";
-import Sports from "./pages/Sports";
-import Clothing from "./pages/Clothing";
-import BagsAccessories from "./pages/BagsAccessories";
-import Brands from "./pages/Brands";
-import Discounts from "./pages/Discounts";
-import AllCategories from "./pages/AllCategories";
 import OrderTracking from "./pages/OrderTracking";
 
 export default function App() {
