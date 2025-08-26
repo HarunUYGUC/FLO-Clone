@@ -9,6 +9,8 @@ export default function DesktopNavbar({
   showLoginMenu,
   setShowLoginMenu,
   handleLogout,
+  wishlistCount,
+  basketCount,
 }) {
   return (
     <>
@@ -48,8 +50,13 @@ export default function DesktopNavbar({
           <div className="d-flex align-items-center gap-4">
             {isLoggedIn && loggedInUser ? (
               <>
-                <Link to="/wishlist" className="text-center text-dark text-decoration-none">
+                <Link to="/wishlist" className="text-center text-dark text-decoration-none position-relative">
                   <FaHeart size={25} />
+                  {wishlistCount > 0 && (
+                    <span className="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+                      {wishlistCount}
+                    </span>
+                  )}
                   <div style={{ fontSize: "0.8rem" }}>Favorilerim</div>
                 </Link>
 
@@ -113,8 +120,13 @@ export default function DesktopNavbar({
               </div>
             )}
             
-            <Link to="/basket" className="d-flex flex-column align-items-center text-dark text-decoration-none">
+            <Link to="/basket" className="d-flex flex-column align-items-center text-dark text-decoration-none position-relative">
               <FaShoppingCart size={25} />
+              {basketCount > 0 && (
+                <span className="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+                  {basketCount}
+                </span>
+              )}
               <div style={{ fontSize: "0.8rem" }}>Sepetim</div>
             </Link>
           </div>

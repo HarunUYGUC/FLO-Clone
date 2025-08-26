@@ -22,12 +22,61 @@ export default function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const location = useLocation();
 
+  const [wishlistItems, setWishlistItems] = useState(() => {
+    const localData = localStorage.getItem("wishlistItems");
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  const [basketItems, setBasketItems] = useState(() => {
+    const localData = localStorage.getItem("basketItems");
+    return localData ? JSON.parse(localData) : [];
+  });
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     const user = localStorage.getItem("loggedInUser");
     setIsLoggedIn(!!token);
     if (user) setLoggedInUser(user);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
+  }, [wishlistItems]);
+
+  useEffect(() => {
+    localStorage.setItem("basketItems", JSON.stringify(basketItems));
+  }, [basketItems]);
+
+  const handleAddToWishlist = (product) => {
+    if (!wishlistItems.find(item => item.id === product.id)) {
+      setWishlistItems(prevItems => [...prevItems, product]);
+    }
+  };
+
+  const handleRemoveFromWishlist = (productId) => {
+    setWishlistItems(currentItems => currentItems.filter(item => item.id !== productId));
+  };
+
+  const handleAddToBasket = (product) => {
+    if (!basketItems.find(item => item.id === product.id)) {
+      setBasketItems(prevItems => [...prevItems, product]);
+    }
+  };
+
+  const handleRemoveFromBasket = (productId) => {
+    setBasketItems(currentItems => currentItems.filter(item => item.id !== productId));
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("token");
+    localStorage.removeItem("wishlistItems");
+    localStorage.removeItem("basketItems");
+    setLoggedInUser(null);
+    setIsLoggedIn(false);
+    setWishlistItems([]);
+    setBasketItems([]);
+  };
 
   return (
     <div className="app">
@@ -36,18 +85,21 @@ export default function App() {
         setIsLoggedIn={setIsLoggedIn}
         loggedInUser={loggedInUser}
         setLoggedInUser={setLoggedInUser}
+        wishlistCount={wishlistItems.length}
+        basketCount={basketItems.length}
+        handleLogout={handleLogout}
       />
 
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/products/:category" element={<ProductList />} />
+          <Route path="/products" element={<ProductList addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} />} />
+          <Route path="/products/:category" element={<ProductList addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} />} />
           <Route path="/products/detail/:id" element={<ProductDetail />} />
           <Route path="/kadin" element={<Woman />} />
           <Route path="/erkek" element={<Man />} />
           <Route path="/cocuk" element={<Child />} />
-          <Route path="/basket" element={<Basket />} />
+          <Route path="/basket" element={<Basket basketItems={basketItems} handleRemoveFromBasket={handleRemoveFromBasket} />} />
           <Route path="/order-tracking" element={<OrderTracking />} />
           <Route path="*" element={<Navigate to="/" />} />
 
@@ -55,15 +107,18 @@ export default function App() {
             path="/wishlist"
             element={
               <PrivateRoute isLoggedIn={isLoggedIn}>
-                <Wishlist />
+                <Wishlist 
+                  wishlistItems={wishlistItems} 
+                  handleRemoveFromWishlist={handleRemoveFromWishlist}
+                  addToBasket={handleAddToBasket} 
+                />
               </PrivateRoute>
             }
           />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setLoggedInUser={setLoggedInUser} />} />
         </Routes>
       </div>
-      
-      {/* Eğer Basket sayfasında değilse Footer göster */}
+
       {location.pathname !== "/basket" && <Footer />}
     </div>
   );

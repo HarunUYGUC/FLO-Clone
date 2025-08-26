@@ -5,7 +5,7 @@ import MobileNavbar from './MobileNavbar';
 import DesktopNavbar from './DesktopNavbar';
 import "./Navbar.css";
 
-export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLoggedInUser }) {
+export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLoggedInUser, wishlistCount, basketCount, handleLogout }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showLoginMenu, setShowLoginMenu] = useState(false);
@@ -25,13 +25,6 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
     } else {
       alert("Kullanıcı adı veya şifre yanlış!");
     }
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("loggedInUser");
-    localStorage.removeItem("token");
-    setLoggedInUser(null);
-    setIsLoggedIn(false);
   };
 
   const toggleMobileMenu = () => {
@@ -83,6 +76,8 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
         showLoginMenu={showLoginMenu}
         setShowLoginMenu={setShowLoginMenu}
         handleLogout={handleLogout}
+        wishlistCount={wishlistCount}
+        basketCount={basketCount}
       />
       <MobileNavbar
         isLoggedIn={isLoggedIn}
@@ -90,6 +85,8 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn, loggedInUser, setLog
         isMobileMenuOpen={isMobileMenuOpen}
         toggleMobileMenu={toggleMobileMenu}
         handleLogout={handleLogout}
+        wishlistCount={wishlistCount}
+        basketCount={basketCount}
       />
 
       {/* Login Modal */}

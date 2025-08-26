@@ -3,7 +3,7 @@ import { useParams, Link, useLocation } from "react-router-dom";
 import { FaHeart, FaShoppingCart, FaStar, FaRegStar } from 'react-icons/fa';
 import "./ProductList.css";
 
-export default function ProductList() {
+export default function ProductList({ addToWishlist, addToBasket }) {
   const { category } = useParams();
   const location = useLocation();
   const [products, setProducts] = useState([]);
@@ -56,6 +56,14 @@ export default function ProductList() {
     return stars;
   };
 
+  const handleAddToWishlist = (product) => {
+    addToWishlist(product);
+  };
+
+  const handleAddToBasket = (product) => {
+    addToBasket(product);
+  };
+
   return (
     <div className="container my-5">
       <h1 className="text-center mb-4">{category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Ürünleri` : "Tüm Ürünler"}</h1>
@@ -70,10 +78,16 @@ export default function ProductList() {
                   {Math.floor(Math.random() * 1000) + 100} kişi favoriledi!
                 </span>
                 <div className="d-flex ms-auto">
-                  <button className="btn btn-light rounded-circle me-2 icon-btn d-flex justify-content-center align-items-center">
+                  <button 
+                    className="btn btn-light rounded-circle me-2 icon-btn d-flex justify-content-center align-items-center"
+                    onClick={() => handleAddToWishlist(p)}
+                  >
                     <FaHeart className="text-danger" />
                   </button>
-                  <button className="btn btn-light rounded-circle icon-btn d-flex justify-content-center align-items-center">
+                  <button 
+                    className="btn btn-light rounded-circle icon-btn d-flex justify-content-center align-items-center"
+                    onClick={() => handleAddToBasket(p)}
+                  >
                     <FaShoppingCart className="text-success" />
                   </button>
                 </div>

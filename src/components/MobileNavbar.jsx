@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUser, FaHeart, FaShoppingCart, FaSearch, FaBars, FaChevronRight } from 'react-icons/fa';
 
-export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLoggedIn, loggedInUser, handleLogout }) {
+export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLoggedIn, loggedInUser, handleLogout, wishlistCount, basketCount }) {
   const [showMobileUserMenu, setShowMobileUserMenu] = useState(false);
 
   const toggleUserMenu = () => {
@@ -48,11 +48,21 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
               </Link>
             )}
 
-            <Link to="/wishlist" className="text-dark">
+            <Link to="/wishlist" className="text-dark position-relative">
               <FaHeart size={20} />
+              {wishlistCount > 0 && (
+                <span className="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+                  {wishlistCount}
+                </span>
+              )}
             </Link>
-            <Link to="/basket" className="text-dark">
+            <Link to="/basket" className="text-dark position-relative">
               <FaShoppingCart size={20} />
+              {basketCount > 0 && (
+                <span className="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+                  {basketCount}
+                </span>
+              )}
             </Link>
           </div>
         </div>
