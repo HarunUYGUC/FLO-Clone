@@ -8,6 +8,7 @@ export default function ProductList({ addToWishlist, addToBasket }) {
   const location = useLocation();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [alert, setAlert] = useState({ show: false, message: '' });
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -32,6 +33,15 @@ export default function ProductList({ addToWishlist, addToBasket }) {
     fetchProducts();
   }, [category]);
 
+  useEffect(() => {
+    if (alert.show) {
+      const timer = setTimeout(() => {
+        setAlert({ show: false, message: '' });
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [alert]);
+  
   if (loading) {
     return <p className="text-center my-5">Yükleniyor...</p>;
   }
@@ -58,14 +68,21 @@ export default function ProductList({ addToWishlist, addToBasket }) {
 
   const handleAddToWishlist = (product) => {
     addToWishlist(product);
+    setAlert({ show: true, message: 'Favorilere Eklendi' });
   };
 
   const handleAddToBasket = (product) => {
     addToBasket(product);
+    setAlert({ show: true, message: 'Sepete Eklendi' });
   };
 
   return (
     <div className="container my-5">
+      {alert.show && (
+        <div className="alert-container">
+          <div className="alert-message">{alert.message}</div>
+        </div>
+      )}
       <h1 className="text-center mb-4">{category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Ürünleri` : "Tüm Ürünler"}</h1>
       <div className="row g-4 justify-content-center">
         {products.map((p) => (
