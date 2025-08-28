@@ -100,7 +100,7 @@ export default function Basket({ basketItems, handleRemoveFromBasket }) {
               <span>Toplam Tutar</span>
               <span>{totalAmount.toFixed(2)} ₺</span>
             </div>
-            <Link to="/checkout" className="btn btn-primary w-100 mt-3" style={{ backgroundColor: "#FF6600", color: "#fff", borderColor: "#FF6600" }}>
+            <Link to="/payment" className="btn btn-primary w-100 mt-3" style={{ backgroundColor: "#FF6600", color: "#fff", borderColor: "#FF6600" }}>
               ÖDEMEYE GEÇ
             </Link>
           </div>

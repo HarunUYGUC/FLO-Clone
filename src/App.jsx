@@ -16,6 +16,7 @@ import Woman from "./pages/Woman";
 import Man from "./pages/Man";
 import Child from "./pages/Child";
 import OrderTracking from "./pages/OrderTracking";
+import Payment from "./pages/Payment";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -78,6 +79,11 @@ export default function App() {
     setBasketItems([]);
   };
 
+  const handleClearBasket = () => {
+    setBasketItems([]);
+    localStorage.removeItem("basketItems");
+  };
+
   return (
     <div className="app">
       <Navbar
@@ -101,6 +107,7 @@ export default function App() {
           <Route path="/cocuk" element={<Child />} />
           <Route path="/basket" element={<Basket basketItems={basketItems} handleRemoveFromBasket={handleRemoveFromBasket} />} />
           <Route path="/order-tracking" element={<OrderTracking />} />
+          <Route path="/payment" element={<Payment clearBasket={handleClearBasket} />} />
           <Route path="*" element={<Navigate to="/" />} />
 
           <Route
