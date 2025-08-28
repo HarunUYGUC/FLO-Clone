@@ -16,12 +16,11 @@ If you are developing a production application, we recommend using TypeScript wi
 - Yeni Proje Oluşturma: npm create vite@latest proje-adi
 - Proje Klasörüne Gir: cd proje-adi
 - Gerekli Paketleri Yükle:
-- - npm install react-icons
+  - npm install react-icons
   - npm install bootstrap
   - npm install axios
   - npm install react-bootstrap bootstrap
 - Geliştirme Sunucusunu Başlat: npm run dev
-- - Geliştirme Sunucusunu Durdur: Ctrl + C
+  - Geliştirme Sunucusunu Durdur: Ctrl + C
 - Üretim İçin Build Alma: npm run build
-- - dist klasörü içinde yayınlanmaya hazır dosyalar oluşur.
-- 
+  - dist klasörü içinde yayınlanmaya hazır dosyalar oluşur.
