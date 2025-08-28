@@ -37,7 +37,7 @@ export default function ProductList({ addToWishlist, addToBasket }) {
     if (alert.show) {
       const timer = setTimeout(() => {
         setAlert({ show: false, message: '' });
-      }, 3000);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [alert]);
