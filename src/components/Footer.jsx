@@ -113,14 +113,76 @@ export default function Footer() {
           </div>
           
             {/* Alt Kısım: Taksit ve Telif */}
-            <p className="mb-2 mt-4 fw-bold">6 Aya Varan Taksit Seçenekleri</p>
+            <p className="mb-2 mt-4 fw-bold d-none d-md-block">6 Aya Varan Taksit Seçenekleri</p>
             <div className="footer-bottom text-center">
-                <div className="d-flex justify-content-center align-items-center flex-wrap gap-3 mb-2">
+                {/* Masaüstü için kart görselleri */}
+                <div className="d-none d-md-flex justify-content-center align-items-center flex-wrap gap-3 mb-2">
                     <img src="/footer-bankcard.png" alt="Footer Bankcard" height="30" />
                     <img src="/footer-payment_2.png" alt="Footer Payment 2" height="30" />
                 </div>
+
+                {/* Mobil için Ödeme Görseli */}
+                <div className="d-md-none mb-2">
+                  <img src="/footer-payment_2.png" alt="Footer Payment 2" height="30" className="mx-auto d-block" />
+                </div>
+
+                {/* Mobil için Carousel */}
+                <div id="footerCarousel" className="carousel slide d-md-none mb-2 footer-carousel-box" data-bs-ride="carousel">
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img src="/bonus.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 1" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                    <div className="carousel-item">
+                      <img src="/maximum.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 2" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                    <div className="carousel-item">
+                      <img src="/axess.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 3" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                    <div className="carousel-item">
+                      <img src="/paraf.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 4" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                    <div className="carousel-item">
+                      <img src="/bankkart.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 5" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                    <div className="carousel-item">
+                      <img src="/cardfinans.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 6" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                    <div className="carousel-item">
+                      <img src="/advantage.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 7" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                    <div className="carousel-item">
+                      <img src="/kuveyt.png" className="d-block mx-auto img-fluid footer-card" alt="Slide 8" />
+                      <p className="mt-2 mb-0">6 Aya Varan Taksit Seçenekleri</p>
+                    </div>
+                  </div>
+                  {/* Kontroller */}
+                  <button className="carousel-control-prev" type="button" data-bs-target="#footerCarousel" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon custom-arrow" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
+                  </button>
+                  <button className="carousel-control-next" type="button" data-bs-target="#footerCarousel" data-bs-slide="next">
+                    <span className="carousel-control-next-icon custom-arrow" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                  </button>
+                </div>
             </div>
-            <p className="mb-0 fw-bold">© 2025 FLO.COM.TR. TÜM HAKLARI SAKLIDIR.</p>
+
+            {/* Mobil */}
+            <p className="mb-0 text-center small d-block d-md-none">
+              © 2025 FLO.COM.TR. TÜM HAKLARI SAKLIDIR.
+            </p>
+
+            {/* Masaüstü */}
+            <p className="mb-0 fw-bold d-none d-md-block">
+              © 2025 FLO.COM.TR. TÜM HAKLARI SAKLIDIR.
+            </p>
         </div>
       </div>
     </footer>

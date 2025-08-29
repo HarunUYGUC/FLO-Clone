@@ -65,3 +65,24 @@
 .footer-custom .footer-bottom p {
   color: #000000 !important;
 }
+
+.footer-card {
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.footer-carousel-box {
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 20px;
+  background-color: #fff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) grayscale(100%); 
+}
+
+.custom-arrow {
+  background-size: 100%, 100%;
+}
