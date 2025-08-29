@@ -10,3 +10,17 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+##
+
+- Yeni Proje Oluşturma: npm create vite@latest proje-adi
+- Proje Klasörüne Gir: cd proje-adi
+- Gerekli Paketleri Yükle:
+  - npm install react-icons
+  - npm install bootstrap
+  - npm install axios
+  - npm install react-bootstrap bootstrap
+- Geliştirme Sunucusunu Başlat: npm run dev
+  - Geliştirme Sunucusunu Durdur: Ctrl + C
+- Üretim İçin Build Alma: npm run build
+  - dist klasörü içinde yayınlanmaya hazır dosyalar oluşur.
