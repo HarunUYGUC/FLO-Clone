@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { FaHeart, FaShoppingCart, FaStar, FaRegStar } from 'react-icons/fa';
+import { useProductActions } from "../hooks/useProductActions";
 import "./ProductList.css";
 
 export default function ProductList({ addToWishlist, addToBasket, isLoggedIn }) {
@@ -9,6 +10,12 @@ export default function ProductList({ addToWishlist, addToBasket, isLoggedIn }) 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [alert, setAlert] = useState({ show: false, message: '' });
+  const { handleAddToWishlist, handleAddToBasket } = useProductActions(
+    isLoggedIn,
+    addToWishlist,
+    addToBasket,
+    setAlert
+  );
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -64,24 +71,6 @@ export default function ProductList({ addToWishlist, addToBasket, isLoggedIn }) 
     }
 
     return stars;
-  };
-
-  const handleAddToWishlist = (product) => {
-    if (!isLoggedIn) {
-      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
-      return;
-    }
-    addToWishlist(product);
-    setAlert({ show: true, message: 'Favorilere Eklendi' });
-  };
-
-  const handleAddToBasket = (product) => {
-    if (!isLoggedIn) {
-      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
-      return;
-    }
-    addToBasket(product);
-    setAlert({ show: true, message: 'Sepete Eklendi' });
   };
 
   return (

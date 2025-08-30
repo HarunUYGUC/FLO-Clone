@@ -1,6 +1,7 @@
 import "./ProductDetail.css";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useProductActions } from "../hooks/useProductActions";
 
 export default function ProductDetail({ addToWishlist, addToBasket, isLoggedIn }) {
   const { id } = useParams();
@@ -11,6 +12,12 @@ export default function ProductDetail({ addToWishlist, addToBasket, isLoggedIn }
   const [alert, setAlert] = useState({ show: false, message: '' });
   const location = useLocation();
   const from = location.state?.from || "/products";
+  const { handleAddToWishlist, handleAddToBasket } = useProductActions(
+    isLoggedIn,
+    addToWishlist,
+    addToBasket,
+    setAlert
+  );
 
   useEffect(() => {
     async function fetchProduct() {
@@ -65,24 +72,6 @@ export default function ProductDetail({ addToWishlist, addToBasket, isLoggedIn }
   if (!product) {
     return <h2 className="text-center my-5">Ürün bulunamadı.</h2>;
   }
-
-  const handleAddToWishlist = (product) => {
-    if (!isLoggedIn) {
-      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
-      return;
-    }
-    addToWishlist(product);
-    setAlert({ show: true, message: 'Favorilere Eklendi' });
-  };
-
-  const handleAddToBasket = (product) => {
-    if (!isLoggedIn) {
-      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
-      return;
-    }
-    addToBasket(product);
-    setAlert({ show: true, message: 'Sepete Eklendi' });
-  };
 
   return (
     <div className="container my-5">
