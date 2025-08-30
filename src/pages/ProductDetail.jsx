@@ -2,6 +2,7 @@ import "./ProductDetail.css";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useProductActions } from "../hooks/useProductActions";
+import AlertMessage from "../components/AlertMessage";
 
 export default function ProductDetail({ addToWishlist, addToBasket, isLoggedIn }) {
   const { id } = useParams();
@@ -56,15 +57,6 @@ export default function ProductDetail({ addToWishlist, addToBasket, isLoggedIn }
     }
   }, [product]);
 
-  useEffect(() => {
-    if (alert.show) {
-      const timer = setTimeout(() => {
-        setAlert({ show: false, message: '' });
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [alert]);
-
   if (loading) {
     return <p className="text-center my-5">Yükleniyor...</p>;
   }
@@ -75,11 +67,8 @@ export default function ProductDetail({ addToWishlist, addToBasket, isLoggedIn }
 
   return (
     <div className="container my-5">
-      {alert.show && (
-        <div className="alert-container">
-          <div className="alert-message">{alert.message}</div>
-        </div>
-      )}
+      <AlertMessage alert={alert} setAlert={setAlert} />
+
       <div className="row">
         <div className="col-12 mb-4">
           <Link to={from} className="btn btn-outline-secondary">
