@@ -1,7 +1,19 @@
 import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
 
 export default function Wishlist({ wishlistItems, handleRemoveFromWishlist, addToBasket }) {
+  const [alert, setAlert] = useState({ show: false, message: '' });
+
+  useEffect(() => {
+    if (alert.show) {
+      const timer = setTimeout(() => {
+        setAlert({ show: false, message: '' });
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [alert]);
+  
   if (!wishlistItems || wishlistItems.length === 0) {
     return (
       <div className="container my-5">
@@ -15,6 +27,11 @@ export default function Wishlist({ wishlistItems, handleRemoveFromWishlist, addT
 
   return (
     <div className="container my-5">
+      {alert.show && (
+        <div className="alert-container">
+          <div className="alert-message">{alert.message}</div>
+        </div>
+      )}
       <h1 className="text-center mb-4">Favorilerim ({wishlistItems.length} Ürün)</h1>
       <div className="row g-4">
         {wishlistItems.map((product) => (
@@ -40,7 +57,10 @@ export default function Wishlist({ wishlistItems, handleRemoveFromWishlist, addT
                       <h4 className="fw-bold text-dark mb-0">{product.price.toFixed(2)} ₺</h4>
                       <button 
                         className="btn btn-primary"
-                        onClick={() => addToBasket(product)}
+                        onClick={() => {
+                          addToBasket(product);
+                          setAlert({ show: true, message: `${product.title} sepete eklendi ✅` });
+                        }}
                       >
                         Sepete Ekle
                       </button>
