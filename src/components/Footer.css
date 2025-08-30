@@ -86,3 +86,15 @@
 .custom-arrow {
   background-size: 100%, 100%;
 }
+
+/* Masaüstü */
+.app-btn {
+  height: 40px;
+}
+
+/* Mobil */
+@media (max-width: 767.98px) {
+  .app-btn {
+    height: 35px;
+  }
+}

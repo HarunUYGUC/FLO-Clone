@@ -39,9 +39,9 @@ export default function Footer() {
 
             {/* Mobil Uygulama Butonları */}
             <div className="d-flex gap-2 mt-3">
-              <a href="https://apps.apple.com/us/app/flo-ayakkabi/id889027386?mt=8" target="_blank" rel="noopener noreferrer"><img src="/google-play.svg" alt="Google Play" height="40" /></a>
-              <a href="https://apps.apple.com/us/app/flo-ayakkabi/id889027386?mt=8" target="_blank" rel="noopener noreferrer"><img src="/app-store.svg" alt="App Store" height="40" /></a>
-              <a href="https://apps.apple.com/us/app/flo-ayakkabi/id889027386?mt=8" target="_blank" rel="noopener noreferrer"><img src="/app-gallery.svg" alt="App Gallery" height="40" /></a>
+              <a href="https://apps.apple.com/us/app/flo-ayakkabi/id889027386?mt=8" target="_blank" rel="noopener noreferrer"><img src="/google-play.svg" alt="Google Play" className="app-btn" /></a>
+              <a href="https://apps.apple.com/us/app/flo-ayakkabi/id889027386?mt=8" target="_blank" rel="noopener noreferrer"><img src="/app-store.svg" alt="App Store" className="app-btn" /></a>
+              <a href="https://apps.apple.com/us/app/flo-ayakkabi/id889027386?mt=8" target="_blank" rel="noopener noreferrer"><img src="/app-gallery.svg" alt="App Gallery" className="app-btn" /></a>
             </div>
           </div>
 
