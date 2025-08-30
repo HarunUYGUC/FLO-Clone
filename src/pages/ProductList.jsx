@@ -3,7 +3,7 @@ import { useParams, Link, useLocation } from "react-router-dom";
 import { FaHeart, FaShoppingCart, FaStar, FaRegStar } from 'react-icons/fa';
 import "./ProductList.css";
 
-export default function ProductList({ addToWishlist, addToBasket }) {
+export default function ProductList({ addToWishlist, addToBasket, isLoggedIn }) {
   const { category } = useParams();
   const location = useLocation();
   const [products, setProducts] = useState([]);
@@ -67,11 +67,19 @@ export default function ProductList({ addToWishlist, addToBasket }) {
   };
 
   const handleAddToWishlist = (product) => {
+    if (!isLoggedIn) {
+      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
+      return;
+    }
     addToWishlist(product);
     setAlert({ show: true, message: 'Favorilere Eklendi' });
   };
 
   const handleAddToBasket = (product) => {
+    if (!isLoggedIn) {
+      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
+      return;
+    }
     addToBasket(product);
     setAlert({ show: true, message: 'Sepete Eklendi' });
   };

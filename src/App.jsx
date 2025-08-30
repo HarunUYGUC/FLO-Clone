@@ -99,9 +99,9 @@ export default function App() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductList addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} />} />
-          <Route path="/products/:category" element={<ProductList addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} />} />
-          <Route path="/products/detail/:id" element={<ProductDetail addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} />} />
+          <Route path="/products" element={<ProductList addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} isLoggedIn={isLoggedIn} />} />
+          <Route path="/products/:category" element={<ProductList addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} isLoggedIn={isLoggedIn} />} />
+          <Route path="/products/detail/:id" element={<ProductDetail addToWishlist={handleAddToWishlist} addToBasket={handleAddToBasket} />} isLoggedIn={isLoggedIn} />
           <Route path="/kadin" element={<Woman />} />
           <Route path="/erkek" element={<Man />} />
           <Route path="/cocuk" element={<Child />} />

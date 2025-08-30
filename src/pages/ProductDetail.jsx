@@ -2,7 +2,7 @@ import "./ProductDetail.css";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function ProductDetail({ addToWishlist, addToBasket }) {
+export default function ProductDetail({ addToWishlist, addToBasket, isLoggedIn }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -67,11 +67,19 @@ export default function ProductDetail({ addToWishlist, addToBasket }) {
   }
 
   const handleAddToWishlist = (product) => {
+    if (!isLoggedIn) {
+      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
+      return;
+    }
     addToWishlist(product);
     setAlert({ show: true, message: 'Favorilere Eklendi' });
   };
 
   const handleAddToBasket = (product) => {
+    if (!isLoggedIn) {
+      setAlert({ show: true, message: 'Lütfen giriş yapın!' });
+      return;
+    }
     addToBasket(product);
     setAlert({ show: true, message: 'Sepete Eklendi' });
   };
