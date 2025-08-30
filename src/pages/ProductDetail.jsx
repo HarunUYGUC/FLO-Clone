@@ -110,16 +110,16 @@ export default function ProductDetail({ addToWishlist, addToBasket }) {
           </p>
           <div className="d-flex gap-3">
             <button 
-              className="btn btn-lg btn-success mt-3 w-100"
-              onClick={() => handleAddToBasket(product)}
-            >
-              Sepete Ekle
-            </button>
-            <button 
               className="btn btn-lg btn-danger mt-3 w-100"
               onClick={() => handleAddToWishlist(product)}
             >
               Favorilere Ekle
+            </button>
+            <button 
+              className="btn btn-lg btn-success mt-3 w-100"
+              onClick={() => handleAddToBasket(product)}
+            >
+              Sepete Ekle
             </button>
           </div>
         </div>

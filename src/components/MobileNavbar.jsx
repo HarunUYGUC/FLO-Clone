@@ -25,6 +25,17 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
 
           {/* Icons */}
           <div className="d-flex align-items-center gap-3">
+            {isLoggedIn && loggedInUser && (
+              <Link to="/wishlist" className="text-dark position-relative">
+                <FaHeart size={20} />
+                {wishlistCount > 0 && (
+                  <span className="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+            )}
+
             {isLoggedIn ? (
               <div className="user-icon-container" onClick={toggleUserMenu} style={{ position: 'relative' }}>
                 <FaUser size={20} />
@@ -48,14 +59,6 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
               </Link>
             )}
 
-            <Link to="/wishlist" className="text-dark position-relative">
-              <FaHeart size={20} />
-              {wishlistCount > 0 && (
-                <span className="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
-                  {wishlistCount}
-                </span>
-              )}
-            </Link>
             <Link to="/basket" className="text-dark position-relative">
               <FaShoppingCart size={20} />
               {basketCount > 0 && (
