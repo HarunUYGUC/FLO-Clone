@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUser, FaHeart, FaShoppingCart, FaSearch, FaBars, FaChevronRight } from 'react-icons/fa';
+import SearchInput from './SearchInput';
 
 export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLoggedIn, loggedInUser, handleLogout, wishlistCount, basketCount }) {
   const [showMobileUserMenu, setShowMobileUserMenu] = useState(false);
@@ -72,17 +73,7 @@ export default function MobileNavbar({ isMobileMenuOpen, toggleMobileMenu, isLog
       </nav>
 
       {/* Search Bar */}
-      <div className="container-fluid my-3 px-3 d-lg-none">
-        <div className="d-flex align-items-center form-control border-warning p-2" style={{ height: '50px' }}>
-          <FaSearch size={20} style={{ color: '#989A98' }} />
-          <input 
-            type="text" 
-            className="form-control border-0 search-input" 
-            placeholder="Ürün veya marka ara..." 
-            style={{ height: '28px' }} 
-          />
-        </div>
-      </div>
+      <SearchInput isMobile />
 
       {/* Offcanvas Mobile Menu */}
       <div className={`offcanvas offcanvas-start${isMobileMenuOpen ? ' show' : ''}`} tabIndex="-1" id="offcanvasNavbar">

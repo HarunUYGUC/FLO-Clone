@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaUser, FaShoppingCart, FaHeart, FaSearch } from 'react-icons/fa';
 import DownloadNow from './DownloadNow';
+import SearchInput from './SearchInput';
 
 export default function DesktopNavbar({
   isLoggedIn,
@@ -41,10 +42,7 @@ export default function DesktopNavbar({
               <NavLink to="/cocuk" className="text-dark text-decoration-none">Çocuk</NavLink>
             </div>
 
-            <div className="d-flex align-items-center form-control border-warning p-2" style={{ width: '650px', height: '50px' }}>
-              <FaSearch size={20} style={{ color: '#989A98' }} />
-              <input type="text" className="form-control border-0 search-input" placeholder="Ürün veya marka ara..." style={{ height: '28px' }} />
-            </div>
+            <SearchInput />
           </div>
 
           <div className="d-flex align-items-center gap-4">
