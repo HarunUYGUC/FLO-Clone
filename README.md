@@ -24,3 +24,8 @@ If you are developing a production application, we recommend using TypeScript wi
   - Geliştirme Sunucusunu Durdur: Ctrl + C
 - Üretim İçin Build Alma: npm run build
   - dist klasörü içinde yayınlanmaya hazır dosyalar oluşur.
+ 
+##
+
+- Üye olma ve giriş yapma için gerekli olan backend'i geliştiren arkadaşımın repo'su. (Server ücretli olduğu için şu an da kapalı durumda.)
+  -https://github.com/emrebaranarca/ecommerce-hex-auth
